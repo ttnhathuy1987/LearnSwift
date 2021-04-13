@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GAn-1H-rnk">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="aut-Yy-zTD">
+            <objects>
+                <navigationController id="GAn-1H-rnk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MH5-o9-5Cy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="02M-Qy-Jjj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hiq-RN-5zW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652" y="129"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LearnSwiftAdvand" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-Zl-IMq">
+                                <rect key="frame" x="10" y="98" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d5f-hD-Mng">
+                                <rect key="frame" x="10" y="150" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x8-LT-2cL">
+                                <rect key="frame" x="10" y="199" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="clickAddList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AZh-JQ-O9D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx0-tP-iwT">
+                                <rect key="frame" x="359" y="199" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="clickDeleteList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dF4-8E-uVU"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BUL-KB-Nza">
+                                <rect key="frame" x="10" y="257" width="394" height="629"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="rWs-kJ-VXp"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="j1t-AK-1kN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7x8-LT-2cL" firstAttribute="top" secondItem="d5f-hD-Mng" secondAttribute="bottom" constant="15" id="2B5-ju-HhL"/>
+                            <constraint firstItem="BUL-KB-Nza" firstAttribute="top" secondItem="7x8-LT-2cL" secondAttribute="bottom" constant="28" id="4hM-k8-P0k"/>
+                            <constraint firstItem="d5f-hD-Mng" firstAttribute="top" secondItem="JOz-Zl-IMq" secondAttribute="bottom" constant="18" id="8xe-h8-00V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dx0-tP-iwT" secondAttribute="trailing" constant="10" id="K3e-7O-shM"/>
+                            <constraint firstItem="JOz-Zl-IMq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="NPO-gw-vMb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BUL-KB-Nza" secondAttribute="trailing" constant="10" id="O59-Xl-dpJ"/>
+                            <constraint firstItem="JOz-Zl-IMq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Qca-xq-YVB"/>
+                            <constraint firstAttribute="bottom" secondItem="BUL-KB-Nza" secondAttribute="bottom" constant="10" id="Vhv-lA-YlE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d5f-hD-Mng" secondAttribute="trailing" constant="10" id="WAz-gc-26B"/>
+                            <constraint firstItem="d5f-hD-Mng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="YLJ-ca-jeF"/>
+                            <constraint firstItem="7x8-LT-2cL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="gu9-IH-xH5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JOz-Zl-IMq" secondAttribute="trailing" constant="10" id="inY-VS-KHf"/>
+                            <constraint firstItem="BUL-KB-Nza" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="lzw-I0-S3Q"/>
+                            <constraint firstItem="dx0-tP-iwT" firstAttribute="top" secondItem="d5f-hD-Mng" secondAttribute="bottom" constant="15" id="p1k-0Y-5Mw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="y4Z-ls-s8g"/>
+                    <connections>
+                        <outlet property="tbvListpeople" destination="BUL-KB-Nza" id="vmr-Ex-5ZR"/>
+                        <outlet property="txtAddress" destination="d5f-hD-Mng" id="Kzq-B4-eXg"/>
+                        <outlet property="txtName" destination="JOz-Zl-IMq" id="jil-bI-lzN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
